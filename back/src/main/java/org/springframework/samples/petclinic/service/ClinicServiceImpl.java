@@ -293,7 +293,8 @@ public class ClinicServiceImpl implements ClinicService {
 
 	@Override
 	public Oferta findOfertaById(Integer ofertaId) {
-		return ofertaRespository.findOne(ofertaId);
+		Oferta o = ofertaRespository.findOne(ofertaId);
+		return o;
 	}
 
 	@Override
