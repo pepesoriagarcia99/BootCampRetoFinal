@@ -80,6 +80,28 @@ public class OfertaController {
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 
+	@PreAuthorize("hasRole(@roles.OFERTA_ADMIN)")
+	@RequestMapping(value = "/{ofertaId}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<Oferta> updateOferta(@PathVariable("ofertaId") Integer ofertaId, @RequestBody @Valid Oferta oferta,
+			BindingResult bindingResult) {
+		BindingErrorsResponse errors = new BindingErrorsResponse();
+		HttpHeaders headers = new HttpHeaders();
+		if (bindingResult.hasErrors() || (oferta == null)) {
+			errors.addAllErrors(bindingResult);
+			headers.add("errors", errors.toJSON());
+			return new ResponseEntity<Oferta>(headers, HttpStatus.BAD_REQUEST);
+		}
+		Oferta currentOferta = this.clinicService.findOfertaById(ofertaId);
+		if (currentOferta == null) {
+			return new ResponseEntity<Oferta>(HttpStatus.NOT_FOUND);
+		}
+		currentOferta.setTitulo(oferta.getTitulo());
+		currentOferta.setDescripcion(oferta.getDescripcion());
+		currentOferta.setDescuento(oferta.getDescuento());
+		currentOferta.setFechaExpidacion(oferta.getFechaExpiracion());
 
+		this.clinicService.saveOferta(currentOferta);
+		return new ResponseEntity<Oferta>(currentOferta, HttpStatus.OK);
+	}
 
 }
