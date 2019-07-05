@@ -57,3 +57,16 @@ INSERT INTO users(username,password,enabled) VALUES ('admin','admin', true);
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_OWNER_ADMIN');
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_VET_ADMIN');
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_ADMIN');
+
+
+
+
+INSERT INTO oferta (titulo, descripcion, descuento, fechaExpiracion) VALUES ("cocheRojo", "es un coche rojo muy bonito", 15.0, '2019-07-10');
+INSERT INTO oferta (titulo, descripcion, descuento, fechaExpiracion) VALUES ("mesaAzul", "es una mesa azul muy fea", 5.0, '2019-07-10');
+INSERT INTO oferta (titulo, descripcion, descuento, fechaExpiracion) VALUES ("platanos", "son de canarias, están buenisimos", 15.0, '2019-07-10');
+INSERT INTO oferta (titulo, descripcion, descuento, fechaExpiracion) VALUES ("violin", "se toca sencillamente y suena bien", 15.0, '2019-07-10');
+INSERT INTO oferta (titulo, descripcion, descuento, fechaExpiracion) VALUES ("guitarra", "no es electrica, pero triunfaras con ella igual", 15.0, '2019-07-10');
+
+
+
+
