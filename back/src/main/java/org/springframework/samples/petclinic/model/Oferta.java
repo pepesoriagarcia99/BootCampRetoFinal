@@ -26,7 +26,7 @@ public class Oferta  {
 	 @Column (name ="descuento")
 	 private Double descuento;
 	 
-	 @Column (name ="fechaExpiracion")
+	 @Column (name ="fecha_expiracion")
 	 private Date fechaExpiracion;
 
 	public String getId() {

@@ -87,6 +87,6 @@ CREATE TABLE ofertas (
 	titulo VARCHAR(25),
 	descripcion VARCHAR(50),
 	descuento DOUBLE,
-	fechaExpiracion DATE
+	fecha_expiracion DATE
 	);
 
