@@ -16,18 +16,21 @@
 package org.springframework.samples.petclinic.service;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.orm.ObjectRetrievalFailureException;
+import org.springframework.samples.petclinic.model.Oferta;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
+import org.springframework.samples.petclinic.repository.OfertaRespository;
 import org.springframework.samples.petclinic.repository.OwnerRepository;
 import org.springframework.samples.petclinic.repository.PetRepository;
 import org.springframework.samples.petclinic.repository.PetTypeRepository;
@@ -54,6 +57,7 @@ public class ClinicServiceImpl implements ClinicService {
     private VisitRepository visitRepository;
     private SpecialtyRepository specialtyRepository;
 	private PetTypeRepository petTypeRepository;
+	private OfertaRespository ofertaRespository;
 
     @Autowired
      public ClinicServiceImpl(
@@ -62,13 +66,15 @@ public class ClinicServiceImpl implements ClinicService {
     		 OwnerRepository ownerRepository,
     		 VisitRepository visitRepository,
     		 SpecialtyRepository specialtyRepository,
-			 PetTypeRepository petTypeRepository) {
+			 PetTypeRepository petTypeRepository,
+			 OfertaRespository ofertaRespository) {
         this.petRepository = petRepository;
         this.vetRepository = vetRepository;
         this.ownerRepository = ownerRepository;
         this.visitRepository = visitRepository;
         this.specialtyRepository = specialtyRepository; 
 		this.petTypeRepository = petTypeRepository;
+		this.ofertaRespository = ofertaRespository;
     }
 
 	@Override
@@ -284,6 +290,34 @@ public class ClinicServiceImpl implements ClinicService {
 	public Collection<Visit> findVisitsByPetId(int petId) {
 		return visitRepository.findByPetId(petId);
 	}
+
+	@Override
+	public Oferta findOfertaById(int ofertaId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<Oferta> findAllOfertas() throws DataAccessException {
+		return ofertaRespository.findAll();
+	}
+
+	@Override
+	public Collection<Oferta> findByfechaExpiracion(Date fechaActual) throws DataAccessException {
+		return ofertaRespository.findByfechaExpiracion(fechaActual);
+	}
+
+	@Override
+	public Oferta saveOferta(Oferta oferta) throws DataAccessException {
+		oferta = ofertaRespository.save(oferta);
+		return oferta;
+	}
+
+	@Override
+	public void deleteOferta(Oferta oferta) throws DataAccessException {
+		ofertaRespository.delete(oferta);		
+	}
+	
 	
 	
 
