@@ -29,7 +29,10 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+
 import { ListOfertaComponent } from 'app/ofertas/list-oferta/list-oferta.component';
+import { AddOfertaComponent } from 'app/ofertas/add-oferta/add-oferta.component';
+
 
 @NgModule({
   imports: [
@@ -37,12 +40,15 @@ import { ListOfertaComponent } from 'app/ofertas/list-oferta/list-oferta.compone
     FormsModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+
   ],
   declarations: [
     PageNotFoundComponent,
     WelcomeComponent,
-    ListOfertaComponent
+
+    ListOfertaComponent,
+    AddOfertaComponent
   ],
   exports: [
     PageNotFoundComponent,

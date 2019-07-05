@@ -32,6 +32,7 @@ export class EditOfertaComponent implements OnInit {
     this.ofertaService.create(oferta).subscribe(
       data => {
         this.oferta = data;
+        this.router.navigate(['']);
       },
       error => this.errorMessage = <any>error
     );

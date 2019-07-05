@@ -29,12 +29,12 @@ import { EditOfertaComponent } from './ofertas/edit-oferta/edit-oferta.component
 import { AddOfertaComponent } from './ofertas/add-oferta/add-oferta.component';
 
 const appRoutes: Routes = [
+  // {path: 'ofertas', component: ListOfertaComponent},
+  // {path: 'ofertas/add', component: AddOfertaComponent},
+  // {path: 'ofertas/edit/:id', component: EditOfertaComponent},
   {path: 'welcome', component: WelcomeComponent},
   {path: '', component: WelcomeComponent},
   {path: '**', component: PageNotFoundComponent}
-  {path: 'ofertas', component: ListOfertaComponent},
-  {path: 'vets/add', component: AddOfertaComponent},
-  {path: 'ofertas/edit/:id', component: EditOfertaComponent}
 ];
 
 @NgModule({

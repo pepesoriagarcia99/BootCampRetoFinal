@@ -17,7 +17,10 @@ export class AddOfertaComponent implements OnInit {
   private descuento:number;
   private fechaExpiracion:Date;
 
-  constructor( private ofertaService:OfertaService,private router: Router) { }
+  constructor( 
+    private ofertaService:OfertaService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -27,6 +30,7 @@ export class AddOfertaComponent implements OnInit {
     this.ofertaService.create(oferta).subscribe(
       data => {
         this.oferta = data;
+        this.router.navigate(['']);
       },
       error => {
         console.error("error añadir")

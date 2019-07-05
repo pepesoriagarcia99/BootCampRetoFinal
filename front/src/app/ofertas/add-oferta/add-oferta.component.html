@@ -5,7 +5,7 @@
       New Owner
     </h2>
     <form (ngSubmit)="onSubmit(ofertaForm.value)" #ofertaForm="ngForm" class="form-horizontal">
-      <div class="form-group has-feedback" [class.has-success]="titulo.dirty && titulo.valid" [class.has-error]="firstName.dirty &&  !firstName.valid">
+      <div class="form-group has-feedback" [class.has-success]="titulo.dirty && titulo.valid" [class.has-error]="titulo.dirty &&  !titulo.valid">
         <label for="titulo" class="col-sm-2 control-label">Titulo</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="titulo" [(ngModel)]="oferta.titulo" minlength="2" required name="titulo" #titulo="ngModel"/>
@@ -40,7 +40,7 @@
       </div>
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button class="btn btn-default" type="button" (click)="">Volver</button>
+          <!-- <button class="btn btn-default" type="button" (click)="">Volver</button> -->
           <button class="btn btn-default" type="submit" [disabled]="!ofertaForm.valid">Añade oferta</button>
         </div>
       </div>
