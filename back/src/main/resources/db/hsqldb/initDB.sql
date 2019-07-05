@@ -83,10 +83,10 @@ CREATE INDEX fk_username_idx ON roles (username);
 
 
 CREATE TABLE ofertas (
-	id int PRIMARY KEY, IDENTITY
-	titulo VARCHAR(25)
-	descripcion VARCHAR(50)
-	descuento DOUBLE
+	id int PRIMARY KEY IDENTITY,
+	titulo VARCHAR(25),
+	descripcion VARCHAR(50),
+	descuento DOUBLE,
 	fechaExpiracion DATE
 	);
 
