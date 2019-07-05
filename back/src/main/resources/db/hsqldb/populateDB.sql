@@ -62,7 +62,7 @@ INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_ADMIN');
 
 
 INSERT INTO ofertas (titulo, descripcion, descuento, fecha_expiracion) VALUES ('coche Rojo', 'es un coche rojo muy bonito', 15.0, '2019-07-10');
-INSERT INTO ofertas (titulo, descripcion, descuento, fecha_expiracion) VALUES ('mesa Azul', 'es una mesa azul muy fea', 5.0, '2019-07-10');
+INSERT INTO ofertas (titulo, descripcion, descuento, fecha_expiracion) VALUES ('mesa Azul', 'es una mesa azul muy fea', 5.0, '2019-07-01');
 INSERT INTO ofertas (titulo, descripcion, descuento, fecha_expiracion) VALUES ('platanos', 'son de canarias, están buenisimos', 15.0, '2019-07-10');
 INSERT INTO ofertas (titulo, descripcion, descuento, fecha_expiracion) VALUES ('violin', 'se toca sencillamente y suena bien', 15.0, '2019-07-10');
 INSERT INTO ofertas (titulo, descripcion, descuento, fecha_expiracion) VALUES ('guitarra', 'no es electrica, pero triunfaras con ella igual', 15.0, '2019-07-10');

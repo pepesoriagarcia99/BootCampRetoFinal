@@ -2,6 +2,7 @@ package org.springframework.samples.petclinic.rest;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -102,6 +103,18 @@ public class OfertaController {
 
 		this.clinicService.saveOferta(currentOferta);
 		return new ResponseEntity<Oferta>(currentOferta, HttpStatus.OK);
+	}
+	
+	@PreAuthorize("hasRole(@roles.OFERTA_ADMIN)")
+	@RequestMapping(value = "/activas", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<Collection<Oferta>> getFechaExpiracion() {
+		
+		Date fechaActual = new Date();
+		Collection<Oferta> listaOferta = this.clinicService.findByfechaExpiracion(fechaActual);
+		if (listaOferta == null || listaOferta.size() == 0) {
+			return new ResponseEntity<Collection<Oferta>>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Collection<Oferta>>(listaOferta, HttpStatus.OK);
 	}
 
 }
