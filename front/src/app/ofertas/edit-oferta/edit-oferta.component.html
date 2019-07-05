@@ -1,0 +1,49 @@
+<!-- id titulo descripcion descuento fecha caducidad -->
+<div class="container-fluid">
+  <div class="container xd-container">
+    <h2>
+      Modificar Oferta
+    </h2>
+    <form (ngSubmit)="onSubmit(ofertaForm.value)" #ofertaForm="ngForm" class="form-horizontal">
+      <div class="form-group has-feedback" [class.has-success]="titulo.dirty && titulo.valid" [class.has-error]="firstName.dirty &&  !firstName.valid">
+        <label for="titulo" class="col-sm-2 control-label">Titulo</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="titulo" [(ngModel)]="oferta.titulo" minlength="2" required name="titulo" #titulo="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="titulo.valid" [class.glyphicon-remove]="!titulo.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="titulo.dirty && titulo.hasError('required')">titulo requerido</span>
+          <span class="help-block" *ngIf="titulo.dirty && titulo.hasError('minlength')">El titulo tiene que tener dos caracteres minimo</span>
+        </div>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="descripcion.dirty && descripcion.valid" [class.has-error]="descripcion.dirty && !descripcion.valid">
+        <label for="descripcion" class="col-sm-2 control-label">Descripción</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="descripcion" [(ngModel)]="oferta.descripcion" name="descripcion" minlength="2" required #descripcion="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="descripcion.valid" [class.glyphicon-remove]="!descripcion.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="descripcion.dirty && descripcion.hasError('required')">Descripcion requerida</span>
+        </div>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="descuento.dirty && descuento.valid" [class.has-error]="descuento.dirty && !descuento.valid">
+        <label for="address" class="col-sm-2 control-label">Address</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="descuento" [(ngModel)]="oferta.descuento" name="descuento" required #descuento="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="descuento.valid" [class.glyphicon-remove]="!descuento.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="descuento.dirty && descuento.hasError('required')">Descuento requerido</span>
+        </div>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="fechaExpiracion.dirty && fechaExpiracion.valid" [class.has-error]="fechaExpiracion.dirty && !fechaExpiracion.valid">
+        <label for="city" class="col-sm-2 control-label">Fecha de expiración</label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control" id="fechaExpiracion" [(ngModel)]="oferta.fechaExpiracion" name="fechaExpiracion" required #fechaExpiracion="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="fechaExpiracion.valid" [class.glyphicon-remove]="!fechaExpiracion.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="fechaExpiracion.dirty && fechaExpiracion.hasError('required')">La fecha de expiración es requerida</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-default" type="button" (click)="">Volver</button>
+          <button class="btn btn-default" type="submit" [disabled]="!ofertaForm.valid">Añade oferta</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
