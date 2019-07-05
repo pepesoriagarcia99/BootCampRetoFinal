@@ -29,6 +29,7 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { ListOfertaComponent } from 'app/ofertas/list-oferta/list-oferta.component';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import {MatIconModule} from '@angular/material/icon';
   ],
   declarations: [
     PageNotFoundComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ListOfertaComponent
   ],
   exports: [
     PageNotFoundComponent,

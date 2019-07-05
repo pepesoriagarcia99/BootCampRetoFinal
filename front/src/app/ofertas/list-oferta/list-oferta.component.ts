@@ -15,6 +15,7 @@ export class ListOfertaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getAll();
   }
   getAll() {
     this.ofertaService.getAll().subscribe(
@@ -24,6 +25,17 @@ export class ListOfertaComponent implements OnInit {
       },
       error => {
         console.error("error list all")
+      }
+    );
+  }
+  delete(o: OfertaInterface){
+    this.ofertaService.delete(o.id).subscribe(
+      data => {
+        //console.log(data)
+        this.getAll();
+      },
+      error => {
+        console.error("error al borrar")
       }
     );
   }
