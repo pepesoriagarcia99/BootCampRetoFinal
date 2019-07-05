@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OfertaRespository extends JpaRepository<Oferta, Integer>{
 	
-	@Query("SELECT o FROM Ofertas o WHERE o.fechaExpiracion > ?1")
+	@Query("SELECT o FROM Oferta o WHERE o.fechaExpiracion > ?1")
 	List<Oferta> findByfechaExpiracion(Date fechaActual);
 
 }
