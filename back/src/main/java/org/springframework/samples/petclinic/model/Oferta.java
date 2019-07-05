@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,10 +13,9 @@ import javax.persistence.Table;
 @Table(name = "ofertas")
 public class Oferta  {
 	 @Id
-	 @GeneratedValue
+	 @GeneratedValue (strategy = GenerationType.IDENTITY)
 	 @Column(name = "id")
-	 private String id;
-	 
+	 private Integer id;	 
 	 
 	 @Column (name ="titulo")
 	 private String titulo;
@@ -29,11 +29,11 @@ public class Oferta  {
 	 @Column (name ="fecha_expiracion")
 	 private Date fechaExpiracion;
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

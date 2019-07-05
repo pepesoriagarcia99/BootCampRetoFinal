@@ -292,9 +292,8 @@ public class ClinicServiceImpl implements ClinicService {
 	}
 
 	@Override
-	public Oferta findOfertaById(int ofertaId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Oferta findOfertaById(Integer ofertaId) {
+		return ofertaRespository.findOne(ofertaId);
 	}
 
 	@Override

@@ -70,7 +70,7 @@ public interface ClinicService {
 	void saveSpecialty(Specialty specialty) throws DataAccessException;
 	void deleteSpecialty(Specialty specialty) throws DataAccessException;
 	
-	Oferta findOfertaById(int ofertaId);
+	Oferta findOfertaById(Integer ofertaId);
 	Collection<Oferta> findAllOfertas() throws DataAccessException;
 	Collection<Oferta> findByfechaExpiracion(Date fechaActual) throws DataAccessException;
 	Oferta saveOferta(Oferta oferta) throws DataAccessException;
