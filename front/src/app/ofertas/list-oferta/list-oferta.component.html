@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="container xd-container">
+    <h2>TODAS LAS OFERTAS</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Descuento</th>
+          <th>Fecha Expiración</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let oferta of ofertas">
+          <td>{{oferta.id}}</td>
+          <td>{{oferta.titulo}}</td>
+          <td>{{oferta.descripcion}}</td>
+          <td>{{oferta.descuento}}</td>
+          <td>{{oferta.fechaExpiracion}}</td>
+          <td>
+        </td>
+        </tr>
+        </tbody>
+      </table>
+      <div>
+        <button class="btn btn-default" (click)="selectOfertasAll()">Listar Todo</button>
+      </div>
+    </div>
+  </div>
+</div>
