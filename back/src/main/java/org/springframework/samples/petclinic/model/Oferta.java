@@ -4,15 +4,17 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "ofertas")
-public class Ofertas  {
+public class Oferta  {
 	 @Id
-	    @Column(name = "id")
-	    private String id;
+	 @GeneratedValue
+	 @Column(name = "id")
+	 private String id;
 	 
 	 
 	 @Column (name ="titulo")
@@ -24,8 +26,8 @@ public class Ofertas  {
 	 @Column (name ="descuento")
 	 private Double descuento;
 	 
-	 @Column (name ="fechaExpidacion")
-	 private Date fechaExpidacion;
+	 @Column (name ="fechaExpiracion")
+	 private Date fechaExpiracion;
 
 	public String getId() {
 		return id;
@@ -59,18 +61,18 @@ public class Ofertas  {
 		this.descuento = descuento;
 	}
 
-	public Date getFechaExpidacion() {
-		return fechaExpidacion;
+	public Date getFechaExpiracion() {
+		return fechaExpiracion;
 	}
 
 	public void setFechaExpidacion(Date fechaExpidacion) {
-		this.fechaExpidacion = fechaExpidacion;
+		this.fechaExpiracion = fechaExpidacion;
 	}
 
 	@Override
 	public String toString() {
 		return "Ofertas [id=" + id + ", titulo=" + titulo + ", descripcion=" + descripcion + ", descuento=" + descuento
-				+ ", fechaExpidacion=" + fechaExpidacion + "]";
+				+ ", fechaExpidacion=" + fechaExpiracion + "]";
 	}
 	 
 	 
