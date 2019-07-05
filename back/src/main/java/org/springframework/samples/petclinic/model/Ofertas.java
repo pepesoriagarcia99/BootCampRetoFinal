@@ -1,6 +1,7 @@
 package org.springframework.samples.petclinic.model;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,8 +12,8 @@ import javax.persistence.Table;
 @Table(name = "ofertas")
 public class Ofertas  {
 	 @Id
-	    @Column(name = "id")
-	    private String id;
+	 @Column(name = "id")
+	 private String id;
 	 
 	 
 	 @Column (name ="titulo")
